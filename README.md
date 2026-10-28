@@ -34,9 +34,13 @@ est nettement inférieur à nos estimations.
 
 ## mon rôle (Marie)
 
-Dessin à main levée des **trois attractions** puis colorisation sous Photoshop, création d'une persona,
-participation aux chartes, au rapport et au développement du site (une version alternative du site, plus complète,
-a aussi été réalisée puis abandonnée au profit de la version commune présentée ici).
+- Choix du **nom** de l'entreprise et de son **concept**.
+- **Vectorisation du logo** sous Illustrator (logo imaginé par Louis).
+- Dessin à main levée des **trois attractions**, **colorisation sous Photoshop**, puis conversion en **rendus 3D** avec une IA générative.
+- Création d'une persona et du **gabarit InDesign** commun aux trois fiches personae.
+- Rédaction du **rapport de conception** et réalisation de la **vidéo**.
+- Participation aux chartes et au développement du site.
+- Une **version alternative du site**, plus complète et plus riche en JavaScript (**logo animé**, **diaporama** dans la bannière d'accueil). JavaScript étant toléré mais hors barème, car pas encore étudié en cours, c'est la version commune qui a été retenue.
 
 ## le site
 
