@@ -1,0 +1,40 @@
+/* Page « Concepteurs » */
+
+main {
+    padding: 25px 0;
+    background-color: var(--vert-clair);
+}
+
+h3,
+section p {
+    text-align: center;
+}
+
+section {
+    margin: 0 auto;
+    width: 600px;
+}
+
+#concepteur-presentation {
+    padding: 0 35px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.concepteur-profile img {
+    margin: auto;
+    width: 400px;
+    height: 350px;
+    object-fit: cover;
+    border-radius: var(--element-border-radius);
+}
+
+@media screen and (max-width: 768px) {
+    .concepteur-profile img {
+        width: 70vw;
+        height: auto;
+    }
+    section {
+        width: 80vw;
+    }
+}

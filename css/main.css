@@ -1,0 +1,591 @@
+/* BycloWatt – feuille de style commune à toutes les pages
+   SAÉ 1.05 / 1.06 – BUT Informatique 1, IUT de Lens – B. BOUTOUT, L. CARON, M. TIERS */
+
+:root {
+    --vert-fonce: #626F47;
+    --jaune-clair: #fefae0;
+    --jaune-plus-fonce: #f8e77b;
+    --vert-clair: #a4b465;
+    --jaune-or: #ffda79;
+    --element-border-radius: 20px;
+    --gap-between-element: 35px;
+    --gap-between-img: 40px;
+    --gap-text-img: 40px;
+
+    /* Polices appelées sur le poste du visiteur (aucun fichier de police n'est diffusé),
+       avec une police libre puis une famille générique en secours. */
+    --police-texte: 'Trebuchet MS', 'Lucida Grande', 'Lucida Sans Unicode', 'DejaVu Sans', Arial, sans-serif;
+    --police-intertitres: 'Lucida Sans Typewriter', 'Lucida Console', 'DejaVu Sans Mono', monospace;
+    --police-titres: 'Lucida Calligraphy', 'Lucida Handwriting', 'URW Chancery L', cursive;
+}
+
+* {
+    margin: 0;
+}
+
+body {
+    font-family: var(--police-texte);
+    margin: 0;
+}
+
+ul {
+    padding-left: 0;
+}
+
+ul li {
+    list-style: none;
+    padding-left: 40px;
+    background-image: url('../img/feuille-puce.png');
+    background-repeat: no-repeat;
+    background-position: left top 5px;
+    background-size: 25px 25px;
+    margin-bottom: 10px;
+}
+
+p {
+    line-height: 1.6;
+    font-family: var(--police-texte);
+}
+
+#notre-copyright {
+    font-size: smaller;
+    border-top: 1px solid;
+    position: sticky;
+    align-self: baseline;
+}
+
+/* En-tête et navigation */
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 40px;
+    top: 0;
+    background-color: var(--vert-fonce);
+    position: fixed;
+    color: var(--jaune-clair);
+    width: calc(100% - 80px);
+    height: 80px;
+    z-index: 2; /* au-dessus de la bannière */
+}
+
+header a {
+    margin: 0;
+}
+
+header img {
+    width: 65px;
+}
+
+nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-self: end;
+    height: 50px;
+    border-bottom: 1px solid var(--vert-fonce);
+}
+
+nav > div {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+nav a {
+    color: var(--jaune-clair);
+    text-decoration: none;
+}
+
+nav a:hover,
+nav a[aria-current="page"] {
+    color: var(--jaune-or);
+}
+
+.burgerMenu {
+    display: none;
+    padding: 0;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+.burgerMenu img {
+    width: 70px;
+    filter: invert(1); /* pictogramme noir rendu clair pour rester lisible sur le vert foncé */
+}
+
+main {
+    margin-top: 80px;
+    width: 100vw;
+    overflow-x: hidden;
+}
+
+/* Bannière d'accueil et diaporama */
+
+#welcome {
+    padding: 0;
+    position: relative;
+    width: 100%;
+    height: 400px;
+}
+
+h1 {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: var(--police-titres);
+    color: var(--jaune-clair);
+    background-color: rgb(0 0 0 / 50%);
+    width: calc(100% - 80px);
+    height: 400px;
+    font-size: 4.2em;
+    padding: 0 40px;
+    text-align: center;
+}
+
+h2 {
+    font-size: 2.5em;
+    color: var(--jaune-clair);
+    font-family: var(--police-titres);
+    text-align: center;
+}
+
+a {
+    width: fit-content;
+    margin: auto;
+    color: black;
+}
+
+.img-slideshow {
+    position: absolute;
+    width: 100vw;
+    height: 400px;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 3s ease-in-out, transform 5s ease-in-out;
+    transform: scale(1);
+}
+
+.img-slideshow.active {
+    opacity: 1;
+    transition: opacity 1s ease-in-out;
+}
+
+/* Mise en page générale des sections */
+
+section {
+    display: flex;
+    flex-direction: column;
+    row-gap: var(--gap-between-element);
+}
+
+.flex-row {
+    display: flex;
+    flex-direction: row;
+}
+
+section,
+footer {
+    padding: 25px 35px;
+}
+
+h3,
+h5 {
+    color: var(--jaune-clair);
+    width: 100%;
+    text-align: start;
+    font-family: var(--police-intertitres);
+}
+
+h3 {
+    font-weight: bold;
+    font-size: 1.7em;
+}
+
+h5 {
+    font-size: 1.3em;
+}
+
+#presentation {
+    background-color: var(--vert-clair);
+}
+
+#presentation img {
+    width: 40%;
+    height: 60vh;
+    object-fit: cover;
+    border-radius: var(--element-border-radius);
+}
+
+#presentation > div {
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    flex-wrap: wrap-reverse;
+}
+
+#who p {
+    padding: 0 35px;
+}
+
+#mission > div,
+#services > div,
+#who > div {
+    display: flex;
+    flex-direction: column;
+    row-gap: 25px;
+}
+
+#mission .main-btn,
+#services .main-btn {
+    margin: 0;
+}
+
+#services {
+    flex-wrap: wrap-reverse;
+}
+
+#presentation p {
+    width: auto;
+}
+
+/* Boutons (un lien qui a l'allure d'un bouton porte lui-même la classe main-btn) */
+
+.main-btn {
+    display: inline-block;
+    width: fit-content;
+    border-radius: var(--element-border-radius);
+    margin: auto;
+    padding: 10px 15px;
+    border: none;
+    background: #e6c46d /* jaune-or 90 % + black */;
+    color: black;
+    text-decoration: none;
+    font-size: 1.2em;
+    font-family: var(--police-intertitres);
+}
+
+.main-btn:hover {
+    background: #debe69 /* jaune-or 87 % + black */;
+    box-shadow: 4px 5px 2px 1px rgb(0 0 0 / 80%);
+    cursor: pointer;
+}
+
+/* Actualités */
+
+#actus {
+    background: #94a25b /* vert-clair 90 % + black */;
+    align-items: center;
+}
+
+#actus > div {
+    justify-content: center;
+    width: fit-content;
+    gap: var(--gap-text-img);
+    max-width: 100%;
+    overflow: auto;
+    scrollbar-width: none;
+}
+
+.article {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 250px;
+    max-width: 275px;
+    height: 325px;
+    padding: 25px 30px;
+    row-gap: 25px;
+    background-color: var(--jaune-clair);
+    border: 3px solid var(--jaune-or);
+    border-radius: 30px;
+    text-align: center;
+}
+
+.article > img {
+    width: 225px;
+    height: 175px;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+img[src="img/arrow.png"] {
+    margin: auto;
+    width: 100px;
+    height: 100px;
+}
+
+.rotation_180 {
+    transform: rotate(180deg);
+}
+
+/* Produits phares */
+
+#products {
+    background: #839051 /* vert-clair 80 % + black */;
+}
+
+.product,
+.reverse-product {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--gap-text-img);
+}
+
+.reverse-product {
+    flex-wrap: wrap-reverse;
+}
+
+#products .main-btn {
+    margin: 0;
+}
+
+.product > div,
+.reverse-product > div {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-text-img);
+    min-width: 200px;
+    max-width: 600px;
+}
+
+.product img,
+.reverse-product img {
+    margin: 60px 0;
+    width: 40%;
+    min-width: 500px;
+    object-fit: cover;
+    border-radius: var(--element-border-radius);
+}
+
+span.line {
+    padding: 0 5%;
+    border-radius: 50px;
+    border-bottom: var(--vert-fonce) solid 15px;
+}
+
+/* Pourquoi nous choisir */
+
+#choice {
+    background-color: #94a25b /* vert-clair 90 % + black */;
+}
+
+#choice > div {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: var(--gap-between-img);
+}
+
+#choice > div h5 {
+    text-align: center;
+}
+
+#choice p {
+    margin: 0 auto;
+    padding: 0 50px;
+    max-width: 1000px;
+}
+
+#choice > div img {
+    width: 225px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: var(--element-border-radius);
+}
+
+.argument {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--gap-between-img);
+}
+
+/* Concepteurs */
+
+#concepter {
+    background: #6b7542 /* vert-clair 65 % + black */;
+}
+
+#concepter > div {
+    justify-content: center;
+    margin: 0 25px;
+    gap: 50px;
+    flex-wrap: wrap;
+}
+
+#concepter > div img {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: var(--element-border-radius);
+    box-shadow: 4px 1px 7px 4px rgb(0 0 0 / 40%);
+}
+
+.textInImg {
+    position: relative;
+}
+
+.textInImg p {
+    position: absolute;
+    top: 75%;
+    background-color: #b6c384 /* vert-clair 80 % + white */;
+    padding: 10px 0;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    border-radius: 15px;
+    width: 90%;
+}
+
+/* Réseaux sociaux */
+
+#follow {
+    background-color: #737e47 /* vert-clair 70 % + black */;
+}
+
+#follow > div {
+    justify-content: center;
+    gap: 50px;
+    flex-wrap: wrap;
+}
+
+#follow > div img {
+    width: 60px;
+}
+
+/* Pied de page */
+
+footer {
+    display: flex;
+    flex-direction: column;
+    row-gap: var(--gap-between-element);
+    align-items: center;
+    background-color: var(--vert-fonce);
+}
+
+footer img {
+    width: 125px;
+    height: 125px;
+}
+
+footer > div {
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+}
+
+.footer-elements {
+    gap: 100px;
+}
+
+.footer-elements > .el {
+    display: flex;
+    flex-direction: column;
+    row-gap: 15px;
+}
+
+.el > div {
+    display: flex;
+    flex-direction: column;
+    row-gap: 5px;
+}
+
+.el h5 {
+    text-align: center;
+}
+
+footer p,
+footer .el a {
+    color: #ffffff;
+    text-align: center;
+    line-height: 1.6;
+}
+
+footer .el a {
+    text-decoration: none;
+}
+
+footer .el a:hover {
+    color: var(--jaune-or);
+}
+
+/* Adaptation aux écrans */
+
+@media screen and (max-width: 1300px) {
+    #actus > div {
+        justify-content: flex-start;
+    }
+    #actus img[src="img/arrow.png"] {
+        transform: rotate(180deg);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    h1 {
+        font-size: 3.5em;
+    }
+    .burgerMenu {
+        display: block;
+    }
+    nav > .link {
+        display: none;
+    }
+    /* Menu déplié par le bouton (js/menu.js) */
+    nav.ouvert > .link {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 80px;
+        right: 0;
+        padding: 20px 40px;
+        background-color: var(--vert-fonce);
+        border-bottom-left-radius: var(--element-border-radius);
+    }
+    #presentation img {
+        width: 60%;
+        height: 20vh;
+    }
+    #actus > div {
+        flex-direction: column;
+    }
+    img[src="img/arrow.png"] {
+        display: none;
+    }
+    .reverse-product {
+        flex-direction: column-reverse;
+    }
+    .product img,
+    .reverse-product img {
+        margin: 0 auto 30px;
+        width: 80%;
+        min-width: 250px;
+        max-width: 400px;
+    }
+    .product > div > h5,
+    .product > div > p,
+    .reverse-product > div > h5,
+    .reverse-product > div > p {
+        text-align: center;
+    }
+    .product > div,
+    .reverse-product > div {
+        margin: 0 auto;
+    }
+    .product,
+    .footer-elements,
+    footer > .flex-row {
+        flex-direction: column;
+        gap: 25px;
+    }
+}
+
+#notre-copyright a {
+    color: var(--jaune-or);
+    margin: 0;
+}

@@ -1,0 +1,22 @@
+/* Page « À propos » */
+
+main {
+    background-color: var(--vert-clair);
+    padding: 35px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+li {
+    font-family: var(--police-texte);
+    font-size: 1em;
+}
+
+video {
+    display: block;
+    width: 80%;
+    max-width: 800px;
+    margin: 35px auto;
+    border-radius: 10px;
+}

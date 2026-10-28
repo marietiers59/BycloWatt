@@ -1,0 +1,81 @@
+/* Page « Contact » */
+
+#contact-form {
+    background-color: var(--vert-clair);
+    padding: 0 0 25px;
+}
+
+#contact-form img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 500px;
+    margin: 0 auto;
+    gap: 40px;
+}
+
+form > div {
+    display: flex;
+    gap: 25px;
+}
+
+/* Champs empilés : libellé puis zone de saisie (grille d'une colonne) */
+.champs {
+    display: grid;
+    gap: 25px;
+    width: 100%;
+}
+
+.champ {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.champ label {
+    font-family: var(--police-intertitres);
+    font-size: 1.2em;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"] {
+    height: 35px;
+}
+
+input,
+textarea,
+select {
+    border-radius: 10px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+select {
+    height: 40px;
+    background-color: white;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+    form {
+        width: 80vw;
+    }
+    #contact-form img {
+        height: 250px;
+    }
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"] {
+        height: 45px;
+    }
+    select {
+        height: 50px;
+    }
+}

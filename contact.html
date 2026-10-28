@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex">
+    <title>BycloWatt – Contact</title>
+    <meta name="description" content="BycloWatt, entreprise fictive de conception et de location d'attractions autonomes en énergie (projet étudiant).">
+    <link rel="icon" href="img/logo.png">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/contact.css">
+</head>
+<body>
+    <header>
+        <a href="index.html">
+            <img id="header-logo" src="img/logo.png" alt="BycloWatt, retour à l'accueil">
+        </a>
+        <nav aria-label="Navigation principale">
+            <div class="link" id="liens-menu">
+                <a href="prestations.html">Produits et services</a>
+                <a href="contact.html" aria-current="page">Contact</a>
+                <a href="concepteurs.html">Concepteurs</a>
+                <a href="a-propos.html">À propos</a>
+            </div>
+            <button class="burgerMenu" type="button" aria-expanded="false" aria-controls="liens-menu">
+                <img src="img/burgerMenu.png" alt="Ouvrir le menu">
+            </button>
+        </nav>
+    </header>
+    <main>
+        <section id="contact-form">
+            <img src="img/contact.jpg" alt="">
+            <form>
+                <h2>Contactez-nous</h2>
+                <div class="champs">
+                    <div class="champ">
+                        <label for="genre">Civilité :</label>
+                        <select name="genre" id="genre">
+                            <option value="mr">Monsieur</option>
+                            <option value="mme">Madame</option>
+                            <option value="autre">Autre</option>
+                        </select>
+                    </div>
+                    <div class="champ">
+                        <label for="email">E-mail :</label>
+                        <input type="email" name="email" id="email" autocomplete="email" required>
+                    </div>
+                    <div class="champ">
+                        <label for="phone">Téléphone :</label>
+                        <input type="tel" name="phone" id="phone" autocomplete="tel">
+                    </div>
+                    <div class="champ">
+                        <label for="subject">Sujet :</label>
+                        <input type="text" name="subject" id="subject" required>
+                    </div>
+                    <div class="champ">
+                        <label for="message">Message :</label>
+                        <textarea name="message" id="message" cols="30" rows="10" required></textarea>
+                    </div>
+                </div>
+                <div>
+                    <input type="reset" value="Effacer" class="main-btn">
+                    <input type="submit" value="Envoyer" class="main-btn">
+                </div>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <div class="flex-row">
+            <img src="img/logo.png" alt="">
+            <div class="footer-elements flex-row">
+                <div class="el">
+                    <h5>Navigation</h5>
+                    <div>
+                        <a href="index.html">Accueil</a>
+                        <a href="a-propos.html">Société</a>
+                        <a href="prestations.html">Prestations</a>
+                        <a href="concepteurs.html">Concepteurs</a>
+                        <a href="contact.html">Contact</a>
+                    </div>
+                </div>
+                <div class="el">
+                    <h5>Contact</h5>
+                    <div>
+                        <p>+33 (0) 8 36 65 65 65</p>
+                        <p>14 rue de l'Université 62300 LENS</p>
+                        <p>lens@byclowatt.anonaddy.me</p>
+                    </div>
+                </div>
+                <div class="el">
+                    <h5>Produits</h5>
+                    <div>
+                        <a href="prestations.html#velomix">Vélomixeur</a>
+                        <a href="prestations.html#danceFloor">Piste de danse</a>
+                        <a href="prestations.html#carousel">Carrousel à pédales</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <p id="notre-copyright">© Benjamin BOUTOUT, Louis CARON et Marie TIERS – BUT 1 informatique, IUT de Lens, 2025.
+            Entreprise fictive créée dans le cadre d'un projet étudiant –
+            <a href="https://marietiers59.github.io/e-portfolio/">portfolio de Marie TIERS</a>.</p>
+    </footer>
+    <script src="js/menu.js"></script>
+</body>
+</html>
